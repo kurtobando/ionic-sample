@@ -9,7 +9,7 @@
     </ion-header>
 </template>
 
-<script lang="ts" setup>
+<script lang="ts">
 import {
     IonHeader,
     IonToolbar,
@@ -19,21 +19,20 @@ import {
 } from '@ionic/vue';
 import { defineComponent } from 'vue';
 
-defineProps({
-    title: {
-        type: String,
-        default: '',
-        required: false,
-    },
-});
-
-defineComponent({
+export default defineComponent({
     components: {
         IonHeader,
         IonToolbar,
         IonButtons,
         IonBackButton,
         IonTitle,
+    },
+    props: {
+        title: {
+            type: String,
+            default: '',
+            required: false,
+        },
     },
 });
 </script>
