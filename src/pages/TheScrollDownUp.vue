@@ -67,7 +67,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, ref } from 'vue';
 import { IonButton, IonContent, IonPage } from '@ionic/vue';
 import HeaderWithBackButton from '@/components/HeaderWithBackButton.vue';
 
@@ -78,13 +78,21 @@ export default defineComponent({
         IonPage,
         HeaderWithBackButton,
     },
-    methods: {
-        onScrollDown() {
-            this.$refs.content.$el.scrollToBottom(1000);
-        },
-        onScrollUp() {
-            this.$refs.content.$el.scrollToTop(1000);
-        },
+    setup() {
+        const content = ref<InstanceType<typeof IonContent> | null>(null);
+
+        function onScrollDown() {
+            content.value?.$el.scrollToBottom(1000);
+        }
+        function onScrollUp() {
+            content.value?.$el.scrollToTop(1000);
+        }
+
+        return {
+            content,
+            onScrollDown,
+            onScrollUp,
+        };
     },
 });
 </script>
