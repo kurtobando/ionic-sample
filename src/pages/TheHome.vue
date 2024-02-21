@@ -9,7 +9,10 @@
                     <ion-label>Pages</ion-label>
                 </ion-list-header>
                 <ion-item>
-                    <ion-label router-link="/scroll-down-up"> Scroll Down Up </ion-label>
+                    <ion-label router-link="/scroll-down-up">Scroll Down Up</ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-label router-link="/sample-form">Sample Form</ion-label>
                 </ion-item>
             </ion-list>
         </template>
