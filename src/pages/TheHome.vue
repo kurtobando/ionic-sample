@@ -14,6 +14,9 @@
                 <ion-item>
                     <ion-label router-link="/sample-form">Sample Form</ion-label>
                 </ion-item>
+                <ion-item>
+                    <ion-label router-link="/fire-base-authentication-login">Firebase Authentication</ion-label>
+                </ion-item>
             </ion-list>
         </template>
     </LayoutDefault>
