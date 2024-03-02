@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts">
-import { IonHeader, IonToolbar, IonButtons, IonBackButton, IonTitle } from '@ionic/vue';
+import { IonBackButton, IonButtons, IonHeader, IonTitle, IonToolbar } from '@ionic/vue';
 import { defineComponent } from 'vue';
 
 export default defineComponent({

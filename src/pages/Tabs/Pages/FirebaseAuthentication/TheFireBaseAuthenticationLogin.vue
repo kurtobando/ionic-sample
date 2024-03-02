@@ -11,23 +11,23 @@
                 <ion-item>
                     <ion-input
                         v-model="form.email"
+                        :clear-input="true"
                         :label="'Email Address'"
-                        :type="'email'"
-                        :clear-input="true">
+                        :type="'email'">
                     </ion-input>
                 </ion-item>
                 <ion-item>
                     <ion-input
                         v-model="form.password"
+                        :clear-input="true"
                         :label="'Password'"
-                        :type="'password'"
-                        :clear-input="true">
+                        :type="'password'">
                     </ion-input>
                 </ion-item>
             </ion-list>
             <ion-button
-                class="ion-padding"
                 :expand="'block'"
+                class="ion-padding"
                 @click="onLogin">
                 Login
             </ion-button>
@@ -38,18 +38,18 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 import {
-    IonInput,
-    IonLabel,
+    alertController,
     IonButton,
+    IonInput,
+    IonItem,
+    IonLabel,
     IonList,
     IonListHeader,
-    IonItem,
-    alertController,
     loadingController,
 } from '@ionic/vue';
 import { useFirebaseAuth } from 'vuefire';
 import { FirebaseError } from 'firebase/app';
-import { signInWithEmailAndPassword, AuthErrorCodes } from 'firebase/auth';
+import { AuthErrorCodes, signInWithEmailAndPassword } from 'firebase/auth';
 import HeaderWithBackButton from '@/components/HeaderWithBackButton.vue';
 import LayoutDefault from '@/layouts/LayoutDefault.vue';
 

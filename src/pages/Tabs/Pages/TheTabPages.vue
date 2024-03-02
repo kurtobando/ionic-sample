@@ -1,7 +1,7 @@
 <template>
     <LayoutDefault>
         <template #header>
-            <HeaderWithBackButton title="Ionic Sample" />
+            <HeaderWithBackButton title="Ionic Sample - Pages" />
         </template>
         <template #default>
             <ion-list>
@@ -9,13 +9,15 @@
                     <ion-label>Pages</ion-label>
                 </ion-list-header>
                 <ion-item>
-                    <ion-label router-link="/scroll-down-up">Scroll Down Up</ion-label>
+                    <ion-label router-link="/tab/pages/scroll-down-up">Scroll Down Up</ion-label>
                 </ion-item>
                 <ion-item>
-                    <ion-label router-link="/sample-form">Sample Form</ion-label>
+                    <ion-label router-link="/tab/pages/sample-form">Sample Form</ion-label>
                 </ion-item>
                 <ion-item>
-                    <ion-label router-link="/fire-base-authentication-login">Firebase Authentication</ion-label>
+                    <ion-label router-link="/tab/pages/fire-base-authentication-login">
+                        Firebase Authentication
+                    </ion-label>
                 </ion-item>
             </ion-list>
         </template>
@@ -23,20 +25,21 @@
 </template>
 
 <script lang="ts">
-import { IonList, IonListHeader, IonLabel, IonItem } from '@ionic/vue';
+import { IonItem, IonLabel, IonList, IonListHeader } from '@ionic/vue';
+import { defineComponent } from 'vue';
 import LayoutDefault from '@/layouts/LayoutDefault.vue';
 import HeaderWithBackButton from '@/components/HeaderWithBackButton.vue';
-import { defineComponent } from 'vue';
 
 export default defineComponent({
     components: {
-        IonList,
-        IonListHeader,
         IonLabel,
+        IonListHeader,
+        IonList,
         IonItem,
-        LayoutDefault,
         HeaderWithBackButton,
+        LayoutDefault,
     },
+    setup() {},
 });
 </script>
 

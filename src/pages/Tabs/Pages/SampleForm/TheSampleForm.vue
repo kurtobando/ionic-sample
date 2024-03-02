@@ -11,16 +11,16 @@
                 <ion-item>
                     <ion-input
                         v-model="form.name"
-                        label="Name"
-                        :clear-input="true">
+                        :clear-input="true"
+                        label="Name">
                     </ion-input>
                 </ion-item>
                 <ion-item>
                     <ion-input
                         v-model="form.email"
+                        :clear-input="true"
                         label="Email"
-                        type="email"
-                        :clear-input="true">
+                        type="email">
                     </ion-input>
                 </ion-item>
                 <ion-item>
@@ -34,17 +34,17 @@
                 <ion-item>
                     <ion-input
                         v-model="form.password"
+                        :clear-input="true"
                         label="Password"
-                        type="password"
-                        :clear-input="true">
+                        type="password">
                     </ion-input>
                 </ion-item>
                 <ion-item>
                     <ion-input
                         v-model="form.confirmPassword"
+                        :clear-input="true"
                         label="Confirm Password"
-                        type="password"
-                        :clear-input="true">
+                        type="password">
                     </ion-input>
                 </ion-item>
                 <ion-item>
@@ -54,32 +54,32 @@
                 <ion-item>
                     <ion-textarea
                         v-model="form.about"
-                        label="Tell me about yourself"
-                        label-placement="stacked"
+                        :auto-grow="true"
                         :counter="true"
                         :maxlength="120"
-                        :auto-grow="true">
+                        label="Tell me about yourself"
+                        label-placement="stacked">
                     </ion-textarea>
                 </ion-item>
             </ion-list>
             <ion-button
-                @click="onSubmit()"
+                class="ion-padding"
                 expand="block"
-                class="ion-padding">
+                @click="onSubmit()">
                 Register
             </ion-button>
             <ion-alert
-                header="Sample Header"
-                sub-header="Sample Sub Header"
-                message="Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam aperiam corporis, dolorum excepturi facere hic ipsum iste, itaque laboriosam minima nihil, nobis perferendis perspiciatis quam quidem reiciendis saepe totam."
+                :buttons="alertButtons"
                 :is-open="alertIsOpen"
-                :buttons="alertButtons">
+                header="Sample Header"
+                message="Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam aperiam corporis, dolorum excepturi facere hic ipsum iste, itaque laboriosam minima nihil, nobis perferendis perspiciatis quam quidem reiciendis saepe totam."
+                sub-header="Sample Sub Header">
             </ion-alert>
             <ion-modal :keep-contents-mounted="true">
                 <ion-datetime
                     id="datetime"
-                    presentation="date"
                     :show-default-buttons="true"
+                    presentation="date"
                     @ionChange="onChangeDate">
                 </ion-datetime>
             </ion-modal>
@@ -89,21 +89,22 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
+
 import {
-    IonItem,
-    IonInput,
-    IonList,
-    IonListHeader,
-    IonButton,
-    IonTextarea,
-    IonLabel,
-    IonSelect,
-    IonSelectOption,
+    DatetimeChangeEventDetail,
     IonAlert,
+    IonButton,
     IonDatetime,
     IonDatetimeButton,
+    IonInput,
+    IonItem,
+    IonLabel,
+    IonList,
+    IonListHeader,
     IonModal,
-    DatetimeChangeEventDetail,
+    IonSelect,
+    IonSelectOption,
+    IonTextarea,
 } from '@ionic/vue';
 import { IonDatetimeCustomEvent } from '@ionic/core/dist/types/components';
 import HeaderWithBackButton from '@/components/HeaderWithBackButton.vue';
